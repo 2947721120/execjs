@@ -8,16 +8,15 @@ ExecJS可以运行在Ruby JavaScript代码。它会自动选择
 ExecJS支持这些运行时间:
 
 * [therubyracer](https://github.com/cowboyd/therubyracer) - Google V8
-  embedded within Ruby
-* [therubyrhino](https://github.com/cowboyd/therubyrhino) - Mozilla
-  Rhino embedded within JRuby
-* [Duktape.rb](https://github.com/judofyr/duktape.rb) - Duktape JavaScript interpreter
+  嵌入的Ruby
+* [therubyrhino](https://github.com/cowboyd/therubyrhino) - Mozilla的Rhino嵌入的JRuby
+* [Duktape.rb](https://github.com/judofyr/duktape.rb) - Duktape JavaScript解释器
 * [Node.js](http://nodejs.org/)
 * Apple JavaScriptCore - Included with Mac OS X
 * [Microsoft Windows Script Host](http://msdn.microsoft.com/en-us/library/9bbdkx3k.aspx) (JScript)
 * [Google V8](http://code.google.com/p/v8/)
 * [mini_racer](https://github.com/discourse/mini_racer) - Google V8
-  embedded within Ruby
+  嵌入的Ruby
 
 简单例子:
 
@@ -60,21 +59,21 @@ ExecJS提供了一个最小公分母接口的JavaScript运行。
 出于类似的原因为模块，并不是所有的运行时间保证一个完整的JavaScript
 事件循环。 所以 `setTimeout`, `setInterval` 和其他定时器没有定义.
 
-**Why can't I use ES5 features?**
+**为什么我不能用ES5功能?**
 
-Some runtimes like Node will implement many of the latest ES5 features. However
-older stock runtimes like JSC on OSX and JScript on Windows may not. You should
-only count on ES3 features being available. Prefer feature checking these APIs
-rather than hard coding support for specific runtimes.
+如Node一些运行时将实施许多最新的ES5功能。 然而
+旧的股票运行时就像JSC在OSX和JScript的Windows上可能不会。 你应该
+只有指望ES3的功能是可用的。不想功能检查这些API
+具体运行时间，而不是硬编码的支持.
 
-**Can ExecJS be used to sandbox scripts?**
+**ExecJS可用于沙箱脚本?**
 
-No, ExecJS shouldn't be used for any security related sandboxing. Since runtimes
-are automatically detected, each runtime has different sandboxing properties.
-You shouldn't use `ExecJS.eval` on any inputs you wouldn't feel comfortable Ruby
+无，ExecJS不应被用于任何与安全有关的沙盒。由于运行时间
+自动检测，每个运行时都有不同的沙箱属性。
+你不应该使用'ExecJS.eval`任何投入，你会感到不舒服的Ruby
 `eval()`ing.
 
-## Contributing to ExecJS
+## 特约ExecJS
 
 ExecJS is work of hundreds of contributors. You're encouraged to submit pull requests, propose
 features and discuss issues.
